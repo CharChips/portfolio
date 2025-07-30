@@ -1,20 +1,42 @@
+
+import CertificateCard from '../components/CertificateCard';
+
 function Certifications() {
   return (
-    <div style={{ padding: '2rem', minHeight: '80vh' }}>
-      <h2 style={{ marginBottom: '2rem' }}>Certifications</h2>
-      <div style={{ display: 'flex', gap: '2rem', marginBottom: '2rem' }}>
-        {/* AWS and description */}
-        <div style={{ flex: 1 }}>
-          <div style={{ fontWeight: 'bold', fontSize: '1.7rem', marginBottom: 8 }}>AWS</div>
-          <div style={{ color: '#555', marginBottom: 16 }}>Short description for AWS certification goes here.</div>
-          <div style={{ fontWeight: 'bold', fontSize: '1.5rem', marginTop: 40 }}>Flutter</div>
-        </div>
-        {/* Image and NVIDIA, DS */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', height: '100%' }}>
-          <div style={{ width: 160, height: 90, background: '#eee', borderRadius: 10, border: '2px solid #ccc', marginBottom: 8 }} />
-          <div style={{ fontWeight: 'bold', fontSize: '1.5rem', marginBottom: 32 }}>NVIDIA</div>
-          <div style={{ fontWeight: 'bold', fontSize: '1.5rem', marginTop: 'auto' }}>DS</div>
-        </div>
+    <div style={{ padding: '2rem', minHeight: '80vh', background: '#fafafa' }}>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(2, 1fr)',
+        gap: '2.5rem',
+        justifyContent: 'center',
+        alignItems: 'center',
+        maxWidth: 900,
+        margin: '0 auto',
+      }}>
+        <CertificateCard
+          name="AWS"
+          description="Amazon Web Services Certified Solutions Architect. Demonstrated expertise in designing and deploying scalable systems."
+          image="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+          link="#"
+        />
+        <CertificateCard
+          name="NVIDIA"
+          description="NVIDIA Deep Learning Institute Certificate. Completed hands-on training in deep learning and AI."
+          image="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+          link="#"
+        />
+        <CertificateCard
+          name="Flutter"
+          description="Flutter Development Certificate. Built cross-platform mobile apps using Flutter and Dart."
+          image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+          link="#"
+        />
+        <CertificateCard
+          name="Flutter Advanced"
+          description="Advanced Flutter Certificate. Mastered advanced state management and animations in Flutter."
+          image="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+          link="#"
+        />
       </div>
     </div>
   );

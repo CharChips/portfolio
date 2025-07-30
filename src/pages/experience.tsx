@@ -1,33 +1,59 @@
+
+
+
+import ExperienceBlock from '../components/ExperienceBlock';
+
 function Experience() {
   return (
-    <div style={{ padding: '2rem', minHeight: '80vh' }}>
-      <h2 style={{ marginBottom: '2rem' }}>Experience</h2>
-      <div style={{ display: 'flex', gap: '2rem', marginBottom: '2rem' }}>
-        {/* Left: Image */}
-        <div style={{ flex: 1 }}>
-          <div style={{ width: '100%', height: 120, background: '#eee', borderRadius: 10, border: '2px solid #ccc', marginBottom: 8 }} />
-          <div style={{ fontWeight: 'bold', fontSize: '1.3rem' }}>ISA</div>
-          <div style={{ color: '#555', marginTop: 4 }}>Short description for ISA experience goes here.</div>
-        </div>
-        {/* Right: FAD */}
-        <div style={{ flex: 1 }}>
-          <div style={{ fontWeight: 'bold', fontSize: '2.5rem', marginBottom: 8 }}>FAD</div>
-          <div style={{ color: '#555', marginBottom: 8 }}>Short description for FAD experience goes here.</div>
-          <div style={{ width: '100%', height: 120, background: '#eee', borderRadius: 10, border: '2px solid #ccc' }} />
-        </div>
-      </div>
-      <div style={{ display: 'flex', gap: '2rem', marginBottom: '2rem' }}>
-        {/* Internship */}
-        <div style={{ flex: 1 }}>
-          <div style={{ fontWeight: 'bold', fontSize: '1.3rem', marginBottom: 8 }}>Internship</div>
-          <div style={{ color: '#555' }}>Short description for Internship goes here.</div>
-        </div>
-        {/* Bootcamp */}
-        <div style={{ flex: 1 }}>
-          <div style={{ fontWeight: 'bold', fontSize: '1.3rem', marginBottom: 8 }}>Bootcamp</div>
-          <div style={{ color: '#555' }}>Short description for Bootcamp goes here.</div>
-        </div>
-      </div>
+    <div style={{
+      minHeight: '100vh',
+      width: '100vw',
+      boxSizing: 'border-box',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: 0,
+      margin: 0,
+      background: '#fff',
+    }}>
+      <ExperienceBlock
+        title="FAD"
+        description="Worked as a Frontend Developer at FAD, building modern web interfaces and collaborating with cross-functional teams."
+        images={[
+          'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
+          'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80',
+        ]}
+        imagePosition="left"
+        readMoreLink="/experience/fad"
+      />
+      <ExperienceBlock
+        title="ISA"
+        description="Software Engineer Intern at ISA, focused on backend services and scalable APIs."
+        images={[
+          'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80',
+          'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80',
+        ]}
+        imagePosition="right"
+      />
+      <ExperienceBlock
+        title="Bootcamp"
+        description="Completed a full-stack web development bootcamp, learning modern frameworks and best practices."
+        images={[
+          'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80',
+          'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80',
+        ]}
+        imagePosition="left"
+      />
+      <ExperienceBlock
+        title="Internship"
+        description="Interned at TechNova, contributing to frontend features and UI improvements for a SaaS dashboard."
+        images={[
+          'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80',
+          'https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80',
+        ]}
+        imagePosition="right"
+      />
     </div>
   );
 }
