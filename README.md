@@ -1,73 +1,80 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
+### How to host
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. #### Domain Registrar side
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Add these as 4 A records for @(root):
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+&nbsp;	-185.199.108.153
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+&nbsp;	185.199.109.153
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+&nbsp;	185.199.110.153
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+&nbsp;	185.199.111.153
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-=======
-# portfolio
->>>>>>> 7eba55fe61cc6eb3b287d1e29ae1ddb4ba7786f3
+
+
+
+
+#### 2\. Code Change
+
+
+
+
+
+---push everything ----
+
+
+
+-----instal package---
+
+npm install gh-pages --save-dev
+
+
+
+-----modify package.json------
+
+
+
+
+
+.....
+
+&nbsp; "scripts": {
+
+&nbsp;   ***"deploy": "gh-pages -d dist",     //add this line***
+
+    ***"dev": "vite",***    
+
+&nbsp;   "build": "tsc -b \&\& vite build",
+
+&nbsp;   "lint": "eslint .",
+
+&nbsp;   "preview": "vite preview"
+
+&nbsp; },.....
+
+....
+
+
+
+
+
+----make the project deployable-----
+
+npm run build
+
+npm run deploy
+
+
+
+#### 3\. GitHub 
+
+
+
+settings > pages > 
+
