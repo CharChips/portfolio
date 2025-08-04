@@ -1,5 +1,9 @@
 
-import CertificateCard from '../components/CertificateCard';
+
+import awsDeveloping from '../assets/certificates/awsdeveloping.png';
+import awsFoundation from '../assets/certificates/awsfoundation.png';
+import nvidiaCert from '../assets/certificates/nvidia.png';
+import flutterCert from '../assets/certificates/fluttercerti.jpg';
 
 function Certifications() {
   return (
@@ -14,27 +18,27 @@ function Certifications() {
         margin: '0 auto',
       }}>
         <CertificateCard
-          name="AWS"
-          description="Amazon Web Services Certified Solutions Architect. Demonstrated expertise in designing and deploying scalable systems."
-          image="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+          name="AWS Cloud Developing"
+          description="AWS Certified Developer – Associate. Demonstrated expertise in developing and maintaining AWS-based applications."
+          image={awsDeveloping}
+          link="#"
+        />
+        <CertificateCard
+          name="AWS Cloud Foundation"
+          description="AWS Certified Cloud Practitioner. Validated foundational knowledge of AWS Cloud and global infrastructure."
+          image={awsFoundation}
           link="#"
         />
         <CertificateCard
           name="NVIDIA"
           description="NVIDIA Deep Learning Institute Certificate. Completed hands-on training in deep learning and AI."
-          image="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+          image={nvidiaCert}
           link="#"
         />
         <CertificateCard
           name="Flutter"
           description="Flutter Development Certificate. Built cross-platform mobile apps using Flutter and Dart."
-          image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
-          link="#"
-        />
-        <CertificateCard
-          name="Flutter Advanced"
-          description="Advanced Flutter Certificate. Mastered advanced state management and animations in Flutter."
-          image="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+          image={flutterCert}
           link="#"
         />
       </div>
@@ -43,3 +47,5 @@ function Certifications() {
 }
 
 export default Certifications;
+
+import CertificateCard from '../components/CertificateCard';

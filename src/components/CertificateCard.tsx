@@ -22,7 +22,7 @@ const CertificateCard: React.FC<CertificateCardProps> = ({ name, description, im
       margin: '1.2rem',
       boxSizing: 'border-box',
     }}>
-      <div style={{ width: '100%', height: 140, background: '#f5f5f5', borderRadius: 8, marginBottom: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+      <div style={{ width: '100%', height: 200, background: '#f5f5f5', borderRadius: 8, marginBottom: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
         <img src={image} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 8 }} />
       </div>
       <div style={{ fontWeight: 600, fontSize: '1.3rem', marginBottom: 8 }}>{name}</div>
