@@ -65,11 +65,12 @@ const Navbar = () => {
           display: flex;
           align-items: flex-start;
           justify-content: space-between;
-          padding: 0 1.5rem;
+          padding: 0 1.5rem 0 2rem;
           height: 64px;
           position: relative;
           font-family: 'IBM Plex Mono', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', 'monospace', 'Arial', 'sans-serif';
           z-index: 100;
+          box-sizing: border-box;
         }
         .retro-navbar-left {
           display: flex;
@@ -168,16 +169,24 @@ const Navbar = () => {
         }
         /* Responsive styles */
         @media (max-width: 800px) {
+          .retro-navbar {
+            padding-left: 0.5rem;
+            padding-right: 0.1rem;
+          }
           .retro-navbar-links {
             display: none;
           }
           .retro-navbar-hamburger {
             display: flex;
+            margin-right: 0.7rem;
           }
         }
         @media (min-width: 801px) {
           .retro-navbar-mobile-menu {
             display: none !important;
+          }
+          .retro-navbar-hamburger {
+            margin-right: 0;
           }
         }
       `}</style>

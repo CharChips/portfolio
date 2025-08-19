@@ -8,7 +8,7 @@ import fadlogo from '../assets/fad/fadlogo.jpg';
 function Experience() {
   return (
     <section className="retro-exp-section">
-      <div className="retro-exp-container">
+      <div className="retro-exp-container" style={{marginTop: 0}}>
         <h1 className="retro-exp-heading">Experience</h1>
         <ExperienceBlock
           title="FAD"
@@ -53,7 +53,7 @@ function Experience() {
           background: #fff;
           color: #000;
           min-height: 100vh;
-          padding: 3rem 0;
+          padding: 0.7rem 0 3rem 0;
           font-family: 'IBM Plex Mono', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', 'monospace', 'Arial', 'sans-serif';
         }
         .retro-exp-container {

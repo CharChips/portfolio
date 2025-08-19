@@ -136,7 +136,7 @@ function Projects() {
           background: #fff;
           color: #000;
           min-height: 100vh;
-          padding: 3rem 0;
+          padding: 0.7rem 0 3rem 0;
         }
         .retro-container {
           max-width: 900px;
