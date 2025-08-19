@@ -9,49 +9,95 @@ interface CertificateCardProps {
 
 const CertificateCard: React.FC<CertificateCardProps> = ({ name, description, image, link }) => {
   return (
-    <div style={{
-      width: 320,
-      background: '#fff',
-      borderRadius: 12,
-      border: '2px solid #eee',
-      boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'flex-start',
-      padding: '1.2rem',
-      margin: '1.2rem',
-      boxSizing: 'border-box',
-    }}>
-      <div style={{ width: '100%', height: 200, background: '#f5f5f5', borderRadius: 8, marginBottom: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-        <img src={image} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 8 }} />
+    <div className="retro-cert-card">
+      <div className="retro-cert-img-section">
+        <img src={image} alt={name} className="retro-cert-img" />
       </div>
-      <div style={{ fontWeight: 600, fontSize: '1.3rem', marginBottom: 8 }}>{name}</div>
-      <div style={{ color: '#444', fontSize: '1.05rem', marginBottom: 18 }}>{description}</div>
+      <div className="retro-cert-title">{name}</div>
+      <div className="retro-cert-desc">{description}</div>
       {link && (
         <a
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            background: '#111',
-            color: '#fff',
-            border: 'none',
-            borderRadius: 2,
-            padding: '0.6em 1.5em',
-            fontSize: '1rem',
-            fontWeight: 400,
-            textDecoration: 'none',
-            marginTop: 8,
-            boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
-            transition: 'background 0.2s',
-            display: 'inline-block',
-          }}
-          onMouseOver={e => (e.currentTarget.style.background = '#333')}
-          onMouseOut={e => (e.currentTarget.style.background = '#111')}
+          className="retro-cert-btn"
         >
           View Certificate
         </a>
       )}
+      <style>{`
+        .retro-cert-card {
+          width: 100%;
+          max-width: 340px;
+          background: #fff;
+          border: 1px solid #000;
+          border-radius: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 1.2rem;
+          margin: 0 auto 2rem auto;
+          box-sizing: border-box;
+        }
+        .retro-cert-img-section {
+          width: 100%;
+          height: 180px;
+          background: #f5f5f5;
+          border: 1px solid #000;
+          border-radius: 0;
+          margin-bottom: 1.1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+        }
+        .retro-cert-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 0;
+        }
+        .retro-cert-title {
+          font-weight: bold;
+          font-size: 1.15rem;
+          margin-bottom: 0.5rem;
+          color: #000;
+        }
+        .retro-cert-desc {
+          color: #222;
+          font-size: 1rem;
+          margin-bottom: 1.1rem;
+        }
+        .retro-cert-btn {
+          background: #000;
+          color: #fff;
+          border: 1px solid #000;
+          border-radius: 0;
+          padding: 0.5em 1.3em;
+          font-size: 1rem;
+          font-family: inherit;
+          font-weight: normal;
+          text-decoration: none;
+          cursor: pointer;
+          margin-top: 0.5rem;
+          transition: background 0.15s, color 0.15s, text-decoration 0.15s;
+          display: inline-block;
+        }
+        .retro-cert-btn:hover, .retro-cert-btn:focus {
+          background: #fff;
+          color: #000;
+          text-decoration: underline;
+        }
+        @media (max-width: 700px) {
+          .retro-cert-card {
+            max-width: 100%;
+            padding: 0.8rem;
+          }
+          .retro-cert-img-section {
+            height: 120px;
+          }
+        }
+      `}</style>
     </div>
   );
 };
