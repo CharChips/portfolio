@@ -11,8 +11,8 @@ function Experience() {
       <div className="retro-exp-container" style={{marginTop: 0}}>
         <h1 className="retro-exp-heading">Experience</h1>
         <ExperienceBlock
-          title="FAD"
-          description="Worked as a Frontend Developer at FAD, building modern web interfaces and collaborating with cross-functional teams."
+          title="FAD — Co-Founder & COO"
+          description="Co-founded FAD, a student-led startup pioneering structured thrifting and sustainable fashion. Leading operations, logistics, and partnerships while managing a growing team."
           images={[
             fadlogo,
             fad1
