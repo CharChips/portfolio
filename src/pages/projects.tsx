@@ -5,7 +5,7 @@
 
 
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('All');
