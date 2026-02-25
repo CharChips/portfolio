@@ -176,8 +176,8 @@ function Projects() {
       timeline: '2 months',
       status: 'Completed',
       tags: ['React', 'Vite', 'CSS', 'Web', 'UI/UX'],
-      codeUrl: 'https://github.com/example/portfolio',
-      demoUrl: 'https://portfolio.example.com',
+      codeUrl: '',
+      demoUrl: '',
       photos: [
         // homepage screenshot removed – asset not available
       ]
@@ -198,7 +198,7 @@ function Projects() {
       timeline: '4 months',
       status: 'Completed',
       tags: ['UI/UX', 'Productivity', 'Web', 'Data'],
-      codeUrl: 'https://github.com/example/taskflow',
+      codeUrl: '',
       demoUrl: 'https://app.charchitsahoo.space',
       guestCredentials: {
         username: 'demo_user',
@@ -225,8 +225,8 @@ function Projects() {
           timeline: '5 months',
           status: 'In Development',
           tags: ['AI/ML', 'Computer Vision', 'IoT', 'Data', 'Robotics'],
-          codeUrl: 'https://github.com/example/corrosion-detection-piper',
-          demoUrl: 'https://piper-demo.charchitsahoo.space',
+          codeUrl: '',
+          demoUrl: '',
           photos: [
             // images removed – assets directory empty
           ]
@@ -260,8 +260,8 @@ function Projects() {
           timeline: '8 months',
           status: 'In Development',
           tags: ['Robotics', 'IoT', 'AI/ML', 'Computer Vision', 'Embedded Systems', 'Data'],
-          codeUrl: 'https://github.com/example/piper',
-          demoUrl: 'https://piper.charchitsahoo.space',
+          codeUrl: '',
+          demoUrl: '',
           photos: [
             {
               src: piper1,
@@ -297,8 +297,8 @@ function Projects() {
           timeline: '3 months',
           status: 'Completed',
           tags: ['Cloud', 'AWS', 'Storage', 'Web'],
-          codeUrl: 'https://github.com/example/filecloud',
-          demoUrl: 'https://filecloud.charchitsahoo.space',
+          codeUrl: '',
+          demoUrl: '',
           guestCredentials: {
             username: 'demo_user',
             password: 'filecloud123',
@@ -435,14 +435,16 @@ function Projects() {
 
               {/* Actions */}
               <div className="retro-project-actions">
-                <a
-                  href={selectedProject.codeUrl}
-                  className="retro-btn retro-btn-large"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Source Code
-                </a>
+                {selectedProject.codeUrl && (
+                  <a
+                    href={selectedProject.codeUrl}
+                    className="retro-btn retro-btn-large"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Source Code
+                  </a>
+                )}
                 {selectedProject.playStoreUrl && (
                   <a
                     href={selectedProject.playStoreUrl}
@@ -453,14 +455,16 @@ function Projects() {
                     📱 Play Store
                   </a>
                 )}
-                <a
-                  href={selectedProject.demoUrl}
-                  className="retro-btn retro-btn-primary retro-btn-large"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Live Demo
-                </a>
+                {selectedProject.demoUrl && (
+                  <a
+                    href={selectedProject.demoUrl}
+                    className="retro-btn retro-btn-primary retro-btn-large"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Live Demo
+                  </a>
+                )}
               </div>
             </div>
           </div>
@@ -914,24 +918,28 @@ function Projects() {
                   ))}
                 </div>
                 <div className="retro-card-actions">
-                  <a
-                    href={proj.codeUrl}
-                    className="retro-btn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    View Code
-                  </a>
-                  <a
-                    href={proj.demoUrl}
-                    className="retro-btn retro-btn-primary"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    Live Demo
-                  </a>
+                  {proj.codeUrl && (
+                    <a
+                      href={proj.codeUrl}
+                      className="retro-btn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      View Code
+                    </a>
+                  )}
+                  {proj.demoUrl && (
+                    <a
+                      href={proj.demoUrl}
+                      className="retro-btn retro-btn-primary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Live Demo
+                    </a>
+                  )}
                 </div>
               </div>
               <div className="retro-card-overlay"></div>
