@@ -1,6 +1,18 @@
 import { useState } from 'react';
 import ProjectImage from '../components/ProjectImage';
 
+// project images
+import lumina1 from '../assets/projects/lumina/1.jpg';
+import lumina2 from '../assets/projects/lumina/2.jpg';
+import lumina3 from '../assets/projects/lumina/3.jpg';
+import powerbi2_1 from '../assets/projects/powerbiProject2/1.png';
+import powerbi1_1 from '../assets/projects/powerbi_project1/1.png';
+import powerbi1_2 from '../assets/projects/powerbi_project1/2.png';
+import powerbi1_3 from '../assets/projects/powerbi_project1/3.png';
+import piper1 from '../assets/projects/piper/1.png';
+import piper2 from '../assets/projects/piper/2.png';
+import piper3 from '../assets/projects/piper/3.jpg';
+
 interface Project {
   title: string;
   description: string;
@@ -58,17 +70,17 @@ function Projects() {
       },
       photos: [
         {
-          src: '/src/assets/projects/lumina/1.jpg',
+          src: lumina1,
           alt: 'Lumina main dashboard',
           caption: 'Main dashboard with mood-based lighting controls'
         },
         {
-          src: '/src/assets/projects/lumina/2.jpg',
+          src: lumina2,
           alt: 'Custom lighting scenes',
           caption: 'Create and customize lighting scenes'
         },
         {
-          src: '/src/assets/projects/lumina/3.jpg',
+          src: lumina3,
           alt: 'Lumina app interface',
           caption: 'Smart home lighting interface'
         }
@@ -94,17 +106,17 @@ function Projects() {
       demoUrl: 'https://app.powerbi.com/links/PylqtyCcFe?ctid=cca3f0fe-586f-4426-a8bd-b8146307e738&pbi_source=linkShare',
       photos: [
         {
-          src: '/src/assets/projects/powerbiProject2/1.png',
+          src: powerbi2_1,
           alt: 'Sales Data Analysis Dashboard',
           caption: 'Main dashboard with key sales metrics and KPIs'
         },
         // {
-        //   src: '/src/assets/projects/powerbi_project1/2.png',
+        //   src: powerbi1_2,
         //   alt: 'Sales Performance Analytics',
         //   caption: 'Detailed sales performance analysis and trends'
         // },
         // {
-        //   src: '/src/assets/projects/powerbi_project1/3.png',
+        //   src: powerbi1_3,
         //   alt: 'Data Visualization Components',
         //   caption: 'Interactive charts and data visualization elements'
         // }
@@ -131,17 +143,17 @@ function Projects() {
   demoUrl: '',
   photos: [
     {
-      src: '/src/assets/projects/powerbi_project1/1.png',
+      src: powerbi1_1,
       alt: 'Comparative Sales KPI Dashboard',
       caption: 'Comparison of sales, profit, and units sold across two date ranges'
     },
     {
-      src: '/src/assets/projects/powerbi_project1/2.png',
+      src: powerbi1_2,
       alt: 'Top and Bottom Product Performance Analysis',
       caption: 'Top 5 and Bottom 5 products by sales, profit, and units'
     },
     {
-      src: '/src/assets/projects/powerbi_project1/3.png',
+      src: powerbi1_3,
       alt: 'City-wise Sales Map Visualization',
       caption: 'Geographical distribution of net sales with total order count'
     }
@@ -167,11 +179,7 @@ function Projects() {
       codeUrl: 'https://github.com/example/portfolio',
       demoUrl: 'https://portfolio.example.com',
       photos: [
-        {
-          src: '/src/assets/projects/portfolio-home.jpg',
-          alt: 'Portfolio homepage',
-          caption: 'Clean and modern homepage design'
-        }
+        // homepage screenshot removed – asset not available
       ]
     },
     {
@@ -198,18 +206,9 @@ function Projects() {
         note: 'Access to sample project boards and tasks'
       },
       photos: [
-        {
-          src: '/src/assets/projects/taskflow-board.jpg',
-          alt: 'TaskFlow kanban board',
-          caption: 'Interactive kanban board with drag-and-drop'
-        },
-        {
-          src: '/src/assets/projects/taskflow-analytics.jpg',
-          alt: 'TaskFlow analytics',
-          caption: 'Project progress and team analytics'
-        }
+        // TaskFlow screenshots removed – assets unavailable
       ]
-         },
+    },
          {
           title: 'Corrosion Detection for Piper',
           description: 'AI-powered computer vision system for detecting corrosion inside industrial pipelines.',
@@ -229,21 +228,7 @@ function Projects() {
           codeUrl: 'https://github.com/example/corrosion-detection-piper',
           demoUrl: 'https://piper-demo.charchitsahoo.space',
           photos: [
-            {
-              src: '/src/assets/projects/piper_corrosion/1.png',
-              alt: 'Pipeline corrosion detection dashboard',
-              caption: 'Dashboard showing pipeline corrosion levels over time'
-            },
-            {
-              src: '/src/assets/projects/piper_corrosion/2.png',
-              alt: 'AI corrosion detection output',
-              caption: 'Model prediction highlighting corroded pipe sections'
-            },
-            {
-              src: '/src/assets/projects/piper_corrosion/3.png',
-              alt: 'Pipeline inspection workflow',
-              caption: 'Snapshot processing and analysis pipeline'
-            }
+            // images removed – assets directory empty
           ]
         },
         
@@ -279,17 +264,17 @@ function Projects() {
           demoUrl: 'https://piper.charchitsahoo.space',
           photos: [
             {
-              src: '/src/assets/projects/piper/1.jpg',
+              src: piper1,
               alt: 'PIPER rover prototype',
               caption: 'PIPER rover prototype with adjustable diameter mechanism'
             },
             {
-              src: '/src/assets/projects/piper/2.jpg',
+              src: piper2,
               alt: '3D point cloud visualization',
               caption: 'Open3D visualization of pipeline interior from LiDAR data'
             },
             {
-              src: '/src/assets/projects/piper/3.jpg',
+              src: piper3,
               alt: 'Corrosion detection output',
               caption: 'AI model detecting corrosion inside pipeline from ESP32-CAM feed'
             }
@@ -320,21 +305,7 @@ function Projects() {
             note: 'Login to explore demo file uploads and downloads'
           },
           photos: [
-            {
-              src: '/src/assets/projects/filecloud/1.png',
-              alt: 'FileCloud dashboard',
-              caption: 'Dashboard for managing uploaded files on AWS S3'
-            },
-            {
-              src: '/src/assets/projects/filecloud/2.png',
-              alt: 'File upload interface',
-              caption: 'Upload and organize files with drag-and-drop interface'
-            },
-            {
-              src: '/src/assets/projects/filecloud/3.png',
-              alt: 'AWS S3 integration',
-              caption: 'Architecture showing AWS S3 and EC2 integration'
-            }
+            // filecloud images removed – assets folder missing
           ]
         },
         
