@@ -10,6 +10,9 @@ import Experience from './pages/experience';
 import Projects from './pages/projects';
 import Certifications from './pages/certifications';
 import FadDetails from './pages/fad-details';
+import IsaDetails from './pages/isa-details';
+import BootcampDetails from './pages/bootcamp-details';
+import InternshipDetails from './pages/internship-details';
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/certifications" element={<Certifications />} />
         <Route path="/experience/fad" element={<FadDetails />} />
+        <Route path="/experience/isa" element={<IsaDetails />} />
+        <Route path="/experience/bootcamp" element={<BootcampDetails />} />
+        <Route path="/experience/internship" element={<InternshipDetails />} />
       </Routes>
     </Router>
   );

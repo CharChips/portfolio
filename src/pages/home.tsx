@@ -1,29 +1,12 @@
-import { useRef, useState } from 'react';
+// using only a static image, no state or refs needed
+// import React from 'react';
+import mainImage from '../assets/image.png';
 
 function Home() {
-  // Slideshow images
-  const images = [
-    "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=600&q=80"
-  ];
-  const [imgIdx, setImgIdx] = useState(0);
-  const intervalRef = useRef<number | null>(null);
-
-  const startSlideshow = () => {
-    if (intervalRef.current) return;
-    intervalRef.current = setInterval(() => {
-      setImgIdx(idx => (idx + 1) % images.length);
-    }, 700);
-  };
-  const stopSlideshow = () => {
-    if (intervalRef.current !== null) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
-    setImgIdx(0);
-  };
+  // Single static main photo imported from assets
+  // (bundler will take care of file path)
+  // `mainImage` is already declared above via import
+  
 
   return (
     <div style={{ width: '100%', minHeight: '100vh', background: '#f5f5f5' }}>
@@ -31,26 +14,19 @@ function Home() {
       <div style={{ height: '2.5rem' }} />
       {/* Main Section */}
       <div className="home-main-row">
-        {/* Main Image with hover slideshow */}
-        <div
-          className="home-main-img"
-          onMouseEnter={startSlideshow}
-          onMouseLeave={stopSlideshow}
-        >
-          <img src={images[imgIdx]} alt="profile" className="home-main-img-img" />
+        {/* Main Image (static) */}
+        <div className="home-main-img">
+          <img src={mainImage} alt="profile" className="home-main-img-img" />
         </div>
         {/* Description */}
         <div className="home-main-desc">
           <div style={{ marginBottom: 16, color: '#444', fontWeight: 500 }}>Lives & works in Mumbai, India</div>
           <div style={{ marginBottom: 18 }}>
-            Charchit Sahoo lives and works in Mumbai, India. He is currently pursuing his Bachelor's in Electronics and Telecommunication Engineering and serves as the Secretary of ISA-VESIT, leading initiatives to bridge the gap between students and industry through technical workshops and hackathons.
-          </div>
+            I live and work in Mumbai, India, and I’m currently pursuing a Bachelor's degree in Artificial Intelligence and Data Science. I serve as the COO at FAD, where I handle operations, strategy, and project execution, and I also serve as the Vice President of ISA-VESIT.          </div>
           <div style={{ marginBottom: 18 }}>
-            Charchit specializes in IoT, robotics, and AI integration, with hands-on experience in developing end-to-end solutions combining hardware and software. He has worked on projects involving pipe inspection rovers with LiDAR mapping, cloud-based security camera systems, and machine learning applications on Raspberry Pi.
-          </div>
+            I work across IoT, robotics, embedded systems, AI integration, and cloud projects. I don’t limit myself to a single specialization—instead, I focus on building practical, end-to-end systems that blend hardware, software, and intelligent automation. Some of my key projects include a pipe-inspection rover with LiDAR mapping, machine-learning applications on Raspberry Pi, and various multidisciplinary engineering prototypes.          </div>
           <div style={{ marginBottom: 24 }}>
-            As a workshop instructor, Charchit has taught over 50 students in areas like Raspberry Pi, Linux, AI/ML, and digital design with Verilog. He has also mentored internship groups on app development and embedded systems. A passionate innovator, Charchit is actively exploring real-time AI and IoT applications for industrial automation and smart systems.
-          </div>
+            I’ve trained over 50 students through workshops on Raspberry Pi, Linux, AI/ML, and digital design, and I’ve mentored teams in app development, embedded systems, and project management. Along with my technical background, I bring strong management and leadership skills, and I’m deeply interested in real-time AI and IoT solutions for automation and smart systems.          </div>
         </div>
       </div>
 
@@ -60,36 +36,38 @@ function Home() {
         <div className="home-exp-block">
           <h2 className="home-exp-heading">Experience</h2>
           <ul className="home-bullets">
-            <li>ISA-VESIT Secretary: Leadership, event organization</li>
-            <li>FAD: Technical workshops, hackathons</li>
-            <li>Internship Mentor: App Dev, Embedded Systems</li>
-            <li>Bootcamp: AI/ML, IoT, Linux, Verilog</li>
+            <li>ISA-VESIT Vice President: Strategic leadership, event planning, and team coordination</li>
+            <li>FAD (COO): Operations, growth strategy, product development, and community building</li>
+            <li>Internship Mentor: Guided teams in app development and embedded systems</li>
+            <li>Bootcamp Instructor: Delivered training in AI/ML, IoT, Linux, and Verilog</li>
+
           </ul>
         </div>
         {/* Education */}
         <div className="home-exp-block">
           <h2 className="home-exp-heading">Education</h2>
           <ul className="home-bullets">
-            <li>Bachelor's in Electronics & Telecommunication Engineering</li>
+            <li>Bachelor's in Artificial Intelligence & Data Science</li>
             <li>VESIT, Mumbai</li>
-            <li>Relevant coursework: Digital Design, AI/ML, IoT</li>
+            <li>Relevant coursework: Computer Architecture, IoT, Networking, Operating Systems, Cloud Computing, Data Warehousing, Software Engineering, Data Analysis & Visualization</li>
+
           </ul>
         </div>
       </div>
 
-    {/* Footer: Contact Info (sketch style) */}
-    <footer className="home-footer">
-      <span>
-        <a href="mailto:sahoocharchit@gmail.com" className="home-footer-link">sahoocharchit@gmail.com</a>
-      </span>
-      <span>
-        <a href="https://github.com/CharChips" target="_blank" rel="noopener noreferrer" className="home-footer-link">GitHub</a>
-      </span>
-      <span>
-        <a href="https://www.linkedin.com/in/charchit-sahoo/" target="_blank" rel="noopener noreferrer" className="home-footer-link">LinkedIn</a>
-      </span>
-    </footer>
-    <style>{`
+      {/* Footer: Contact Info (sketch style) */}
+      <footer className="home-footer">
+        <span>
+          <a href="mailto:sahoocharchit@gmail.com" className="home-footer-link">sahoocharchit@gmail.com</a>
+        </span>
+        <span>
+          <a href="https://github.com/CharChips" target="_blank" rel="noopener noreferrer" className="home-footer-link">GitHub</a>
+        </span>
+        <span>
+          <a href="https://www.linkedin.com/in/charchit-sahoo/" target="_blank" rel="noopener noreferrer" className="home-footer-link">LinkedIn</a>
+        </span>
+      </footer>
+      <style>{`
       .home-main-row {
         display: flex;
         justify-content: center;
@@ -202,7 +180,7 @@ function Home() {
         }
       }
     `}</style>
-  </div>
+    </div>
   );
 }
 

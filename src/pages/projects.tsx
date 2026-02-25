@@ -1,13 +1,37 @@
 import { useState } from 'react';
 import ProjectImage from '../components/ProjectImage';
 
+interface Project {
+  title: string;
+  description: string;
+  fullDescription: string;
+  features: string[];
+  technologies: string[];
+  timeline: string;
+  status: string;
+  tags: string[];
+  codeUrl: string;
+  demoUrl: string;
+  playStoreUrl?: string;
+  guestCredentials?: {
+    username: string;
+    password: string;
+    note: string;
+  };
+  photos: {
+    src: string;
+    alt: string;
+    caption: string;
+  }[];
+}
+
 function Projects() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [hoveredCard, setHoveredCard] = useState(null);
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   
   const categories = ['All', 'Power BI', 'App', 'AI/ML', 'Cloud', 'Java', 'UI/UX'];
-  const projects = [
+  const projects: Project[] = [
     {
       title: 'Lumina',
       description: 'A beautiful mobile app for mood-based lighting and smart home design.',
@@ -51,46 +75,79 @@ function Projects() {
       ]
     },
     {
-      title: 'Sales Data Analysis',
-      description: 'AI-powered platform for smart agriculture and crop monitoring.',
-      fullDescription: 'SmartAgriAI is an innovative agricultural technology platform that leverages artificial intelligence and IoT sensors to optimize crop yields and farming efficiency. The system provides real-time monitoring of soil conditions, weather patterns, and crop health, offering actionable insights to farmers for data-driven decision making.',
+      title: 'Ecommerce Sales Dashboard',
+      description: 'Interactive Power BI dashboard showcasing e-commerce sales metrics and insights.',
+      fullDescription: 'A comprehensive sales analytics dashboard built with Power BI to visualize key performance indicators for an e-commerce business. The report highlights total revenue, profit, average order value, quantity sold, and detailed breakdowns by state, category, customer, and payment mode. Users can filter data by quarter and region to uncover trends and make informed decisions.',
       features: [
-        'Real-time crop monitoring',
-        'AI-powered yield prediction',
-        'Weather pattern analysis',
-        'Soil health assessment',
-        'Automated irrigation control',
-        'Mobile dashboard for farmers'
+        'Overview of revenue, profit, AOV, and quantities',
+        'Sales breakdown by state and product category',
+        'Customer-level purchase analysis',
+        'Payment mode distribution (COD, UPI, EMI, etc.)',
+        'Monthly profit trends with quarter selectors',
+        'Interactive slicers and drill‑through capabilities'
       ],
-      technologies: ['Python', 'TensorFlow', 'React', 'IoT Sensors', 'AWS', 'Machine Learning'],
-      timeline: '6 months',
-      status: 'In Development',
-      tags: ['Power BI', 'AI', 'IoT', 'AI/ML', 'Data'],
-      codeUrl: 'https://github.com/example/smartagriai',
+      technologies: ['Power BI', 'DAX', 'Data Visualization', 'Excel'],
+      timeline: '1 month',
+      status: 'Completed',
+      tags: ['Power BI', 'Analytics', 'Dashboard', 'Data'],
+      codeUrl: '',
       demoUrl: 'https://app.powerbi.com/links/PylqtyCcFe?ctid=cca3f0fe-586f-4426-a8bd-b8146307e738&pbi_source=linkShare',
-      guestCredentials: {
-        username: 'farmer_demo',
-        password: 'agri2024',
-        note: 'Demo account with sample farm data'
-      },
       photos: [
         {
-          src: '/src/assets/projects/powerbi_project1/1.png',
+          src: '/src/assets/projects/powerbiProject2/1.png',
           alt: 'Sales Data Analysis Dashboard',
           caption: 'Main dashboard with key sales metrics and KPIs'
         },
-        {
-          src: '/src/assets/projects/powerbi_project1/2.png',
-          alt: 'Sales Performance Analytics',
-          caption: 'Detailed sales performance analysis and trends'
-        },
-        {
-          src: '/src/assets/projects/powerbi_project1/3.png',
-          alt: 'Data Visualization Components',
-          caption: 'Interactive charts and data visualization elements'
-        }
+        // {
+        //   src: '/src/assets/projects/powerbi_project1/2.png',
+        //   alt: 'Sales Performance Analytics',
+        //   caption: 'Detailed sales performance analysis and trends'
+        // },
+        // {
+        //   src: '/src/assets/projects/powerbi_project1/3.png',
+        //   alt: 'Data Visualization Components',
+        //   caption: 'Interactive charts and data visualization elements'
+        // }
       ]
     },
+
+    {
+  title: 'Ecommerce Comparative Sales & Product Performance Dashboard',
+  description: 'Advanced Power BI dashboard comparing sales performance across two date ranges with product and city-level insights.',
+  fullDescription: 'An advanced sales analytics dashboard built in Power BI that enables comparative analysis between two different date ranges. The report provides deep insights into net sales, total sales, profit, and units sold with dynamic date filters. It highlights top and bottom performing products by sales, profit, and quantity, along with city-level sales distribution using map visualization. The dashboard is designed to help businesses identify growth trends, underperforming products, and regional performance differences for better strategic decisions.',
+  features: [
+    'Dual date range comparison using interactive slicers',
+    'KPI comparison for Net Sales, Total Sales, Profit, and Units Sold',
+    'Top 5 and Bottom 5 products by Sales, Profit, and Units Sold',
+    'City-wise sales distribution with interactive map visualization',
+    'Total number of orders KPI card',
+    'Dynamic filtering and drill-down capabilities'
+  ],
+  technologies: ['Power BI', 'DAX', 'Data Modeling', 'Data Visualization'],
+  timeline: '3 weeks',
+  status: 'Completed',
+  tags: ['Power BI', 'Business Intelligence', 'Analytics', 'Dashboard'],
+  codeUrl: '',
+  demoUrl: '',
+  photos: [
+    {
+      src: '/src/assets/projects/powerbi_project1/1.png',
+      alt: 'Comparative Sales KPI Dashboard',
+      caption: 'Comparison of sales, profit, and units sold across two date ranges'
+    },
+    {
+      src: '/src/assets/projects/powerbi_project1/2.png',
+      alt: 'Top and Bottom Product Performance Analysis',
+      caption: 'Top 5 and Bottom 5 products by sales, profit, and units'
+    },
+    {
+      src: '/src/assets/projects/powerbi_project1/3.png',
+      alt: 'City-wise Sales Map Visualization',
+      caption: 'Geographical distribution of net sales with total order count'
+    }
+  ]
+},
+
     {
       title: 'Portfolio',
       description: 'Personal portfolio website built with React and Vite.',
@@ -106,7 +163,7 @@ function Projects() {
       technologies: ['React', 'Vite', 'CSS3', 'JavaScript', 'Responsive Design'],
       timeline: '2 months',
       status: 'Completed',
-      tags: ['React', 'Vite', 'CSS', 'Web'],
+      tags: ['React', 'Vite', 'CSS', 'Web', 'UI/UX'],
       codeUrl: 'https://github.com/example/portfolio',
       demoUrl: 'https://portfolio.example.com',
       photos: [
@@ -152,17 +209,147 @@ function Projects() {
           caption: 'Project progress and team analytics'
         }
       ]
-    },
-
-  ];
+         },
+         {
+          title: 'Corrosion Detection for Piper',
+          description: 'AI-powered computer vision system for detecting corrosion inside industrial pipelines.',
+          fullDescription: 'This project focuses on developing a machine learning pipeline for detecting corrosion within pipes as part of the PIPER rover system. The system processes video snapshots from the ESP32-CAM, applies preprocessing techniques (Hough Transform, edge detection, and thresholding), and runs a deep learning model to identify corrosion, cracks, and sediment. The project integrates real-time video frame analysis with confidence scoring and generates corrosion maps for pipeline health monitoring.',
+          features: [
+            'Corrosion, crack, and sediment detection',
+            'Deep learning model integration (TensorFlow/Keras)',
+            'Video snapshot analysis with per-second evaluation',
+            'Hough Transform and preprocessing for joint detection',
+            'Confidence scoring for predictions',
+            'Data integration with PIPER rover control system'
+          ],
+          technologies: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'Flask', 'ESP32-CAM'],
+          timeline: '5 months',
+          status: 'In Development',
+          tags: ['AI/ML', 'Computer Vision', 'IoT', 'Data', 'Robotics'],
+          codeUrl: 'https://github.com/example/corrosion-detection-piper',
+          demoUrl: 'https://piper-demo.charchitsahoo.space',
+          photos: [
+            {
+              src: '/src/assets/projects/piper_corrosion/1.png',
+              alt: 'Pipeline corrosion detection dashboard',
+              caption: 'Dashboard showing pipeline corrosion levels over time'
+            },
+            {
+              src: '/src/assets/projects/piper_corrosion/2.png',
+              alt: 'AI corrosion detection output',
+              caption: 'Model prediction highlighting corroded pipe sections'
+            },
+            {
+              src: '/src/assets/projects/piper_corrosion/3.png',
+              alt: 'Pipeline inspection workflow',
+              caption: 'Snapshot processing and analysis pipeline'
+            }
+          ]
+        },
+        
+        {
+          title: 'PIPER',
+          description: 'A pipe inspection and profile evaluation rover with 3D mapping and AI-driven defect detection.',
+          fullDescription: 'PIPER (Pipe Inspection and Profile Evaluation Rover) is a robotic system designed to autonomously navigate inside industrial pipelines and provide comprehensive structural health analysis. The rover dynamically adjusts its diameter using a 4-bar linkage mechanism, while collecting sensor and visual data in real-time. Equipped with a 2D LiDAR, MPU650, motor encoders, and environmental sensors (gas and temperature), PIPER generates 3D point clouds of pipe interiors, detects corrosion and cracks through AI models, and streams video via ESP32-CAM. Data is transmitted to a host PC through LoRa, where a desktop application enables real-time visualization, rover control, and defect mapping.',
+          features: [
+            'Autonomous rover with adjustable 4-bar linkage mechanism',
+            '3D point cloud generation using LiDAR + motor encoder fusion',
+            'Corrosion, crack, and sediment detection via AI models',
+            'Live ESP32-CAM feed with storage and cloud integration',
+            'Gas and temperature monitoring with MQ135 and DHT11 sensors',
+            'LoRa-based data transmission to host PC',
+            'Desktop app for real-time control and defect visualization'
+          ],
+          technologies: [
+            'STM32 Nucleo', 
+            'RPLIDAR A1M8', 
+            'ESP32-CAM', 
+            'LoRa', 
+            'Python', 
+            'Open3D', 
+            'TensorFlow/Keras', 
+            'Flask', 
+            'C/C++ (Embedded)', 
+            'IoT Sensors'
+          ],
+          timeline: '8 months',
+          status: 'In Development',
+          tags: ['Robotics', 'IoT', 'AI/ML', 'Computer Vision', 'Embedded Systems', 'Data'],
+          codeUrl: 'https://github.com/example/piper',
+          demoUrl: 'https://piper.charchitsahoo.space',
+          photos: [
+            {
+              src: '/src/assets/projects/piper/1.jpg',
+              alt: 'PIPER rover prototype',
+              caption: 'PIPER rover prototype with adjustable diameter mechanism'
+            },
+            {
+              src: '/src/assets/projects/piper/2.jpg',
+              alt: '3D point cloud visualization',
+              caption: 'Open3D visualization of pipeline interior from LiDAR data'
+            },
+            {
+              src: '/src/assets/projects/piper/3.jpg',
+              alt: 'Corrosion detection output',
+              caption: 'AI model detecting corrosion inside pipeline from ESP32-CAM feed'
+            }
+          ]
+        },
+        {
+          title: 'FileCloud',
+          description: 'A personal cloud storage system built on AWS with secure file management.',
+          fullDescription: 'FileCloud is a cloud-based personal storage platform that enables secure file upload, retrieval, and sharing. Built on AWS infrastructure, the system leverages S3 for scalable object storage and EC2 for backend hosting. It provides presigned URL support for secure file access, user authentication for private storage, and a clean React-based interface for managing files. The project demonstrates how cloud services can be orchestrated to create a reliable, scalable, and user-friendly personal storage solution.',
+          features: [
+            'Secure file upload and download using AWS S3',
+            'Presigned URL support for temporary file sharing',
+            'User authentication and access control',
+            'Scalable backend on AWS EC2',
+            'React-based frontend for file management',
+            'Support for large file uploads with multipart upload',
+            'Basic analytics on file usage'
+          ],
+          technologies: ['AWS S3', 'AWS EC2', 'Node.js', 'React', 'Express', 'Authentication', 'Cloud Computing'],
+          timeline: '3 months',
+          status: 'Completed',
+          tags: ['Cloud', 'AWS', 'Storage', 'Web'],
+          codeUrl: 'https://github.com/example/filecloud',
+          demoUrl: 'https://filecloud.charchitsahoo.space',
+          guestCredentials: {
+            username: 'demo_user',
+            password: 'filecloud123',
+            note: 'Login to explore demo file uploads and downloads'
+          },
+          photos: [
+            {
+              src: '/src/assets/projects/filecloud/1.png',
+              alt: 'FileCloud dashboard',
+              caption: 'Dashboard for managing uploaded files on AWS S3'
+            },
+            {
+              src: '/src/assets/projects/filecloud/2.png',
+              alt: 'File upload interface',
+              caption: 'Upload and organize files with drag-and-drop interface'
+            },
+            {
+              src: '/src/assets/projects/filecloud/3.png',
+              alt: 'AWS S3 integration',
+              caption: 'Architecture showing AWS S3 and EC2 integration'
+            }
+          ]
+        },
+        
+        
+     
+   ];
 
   const filteredProjects = selectedCategory === 'All'
     ? projects
     : projects.filter(p => p.tags.includes(selectedCategory));
 
-  const handleCardClick = (project, e) => {
+  const handleCardClick = (project: Project, e: React.MouseEvent) => {
     // Check if the click was on a button or link
-    if (e.target.closest('.retro-btn') || e.target.closest('a')) {
+    const target = e.target as HTMLElement;
+    if (target.closest('.retro-btn') || target.closest('a')) {
       return; // Let the button/link handle the click
     }
     
@@ -228,10 +415,10 @@ function Projects() {
                   <div className="retro-credentials-box">
                     <div className="retro-credential-item">
                       <span className="retro-credential-label">Username:</span>
-                      <code className="retro-credential-value">{selectedProject.guestCredentials.username}</code>
+                      <code className="retro-credential-value">{selectedProject.guestCredentials?.username}</code>
                       <button 
                         className="retro-copy-btn"
-                        onClick={() => navigator.clipboard.writeText(selectedProject.guestCredentials.username)}
+                        onClick={() => selectedProject.guestCredentials && navigator.clipboard.writeText(selectedProject.guestCredentials.username)}
                         title="Copy username"
                       >
                         📋
@@ -239,16 +426,16 @@ function Projects() {
                     </div>
                     <div className="retro-credential-item">
                       <span className="retro-credential-label">Password:</span>
-                      <code className="retro-credential-value">{selectedProject.guestCredentials.password}</code>
+                      <code className="retro-credential-value">{selectedProject.guestCredentials?.password}</code>
                       <button 
                         className="retro-copy-btn"
-                        onClick={() => navigator.clipboard.writeText(selectedProject.guestCredentials.password)}
+                        onClick={() => selectedProject.guestCredentials && navigator.clipboard.writeText(selectedProject.guestCredentials.password)}
                         title="Copy password"
                       >
                         📋
                       </button>
                     </div>
-                    {selectedProject.guestCredentials.note && (
+                    {selectedProject.guestCredentials?.note && (
                       <div className="retro-credential-note">
                         <span className="retro-note-icon">💡</span>
                         {selectedProject.guestCredentials.note}

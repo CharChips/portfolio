@@ -2,8 +2,7 @@
 import { useState, useEffect } from 'react';
 import fadlogo from '../assets/fad/fadlogo.jpg';
 import fad1 from '../assets/fad/fad1.jpg';
-
-import fad8 from '../assets/fad/8.png';
+import prod1 from '../assets/fad/prod1.jpg';
 import fad9 from '../assets/fad/9.png';
 
 function FadDetails() {
@@ -118,15 +117,18 @@ function FadDetails() {
           
           <div className="retro-fad-products-grid">
             {/* Product 1 */}
-            <div 
+            <a
               className="retro-fad-product-card"
+              href="https://fadclothing.com/product/stylish-cropped-anorak/"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 transform: `translateY(${scrollY * 0.05}px)`
               }}
             >
               <div className="retro-fad-product-image">
-                <img 
-                  src={fad8}
+                <img
+                  src={prod1}
                   alt="FAD Product - Vintage Jacket"
                   className="retro-fad-product-img"
                 />
@@ -138,7 +140,7 @@ function FadDetails() {
                 <div className="retro-fad-product-name">Vintage Denim Collection</div>
                 <div className="retro-fad-product-category">Curated Thrift</div>
               </div>
-            </div>
+            </a>
             
             {/* Product 2 */}
             <div 
@@ -477,6 +479,23 @@ function FadDetails() {
           height: 100%;
           object-fit: cover;
           transition: transform 0.5s ease;
+        }
+
+        /* Link styling for clickable product */
+        .retro-fad-product-link {
+          display: block;
+          width: 100%;
+          height: 100%;
+          color: inherit;
+          text-decoration: none;
+        }
+        .retro-fad-product-link-name {
+          color: inherit;
+          text-decoration: none;
+          font-weight: bold;
+        }
+        .retro-fad-product-link-name:hover {
+          text-decoration: underline;
         }
         
         .retro-fad-product-card:hover .retro-fad-product-img {

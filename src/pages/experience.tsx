@@ -4,6 +4,8 @@
 import ExperienceBlock from '../components/ExperienceBlock';
 import fad1 from '../assets/fad/fad1.jpg';
 import fadlogo from '../assets/fad/fadlogo.jpg';
+import bootcamp1 from '../assets/bootcamp/bootcamp1.jpg';
+import isa1 from '../assets/experience/isa/1.jpeg';
 
 function Experience() {
   return (
@@ -12,7 +14,7 @@ function Experience() {
         <h1 className="retro-exp-heading">Experience</h1>
         <ExperienceBlock
           title="FAD — Co-Founder & COO"
-          description="Co-founded FAD, a student-led startup pioneering structured thrifting and sustainable fashion. Leading operations, logistics, and partnerships while managing a growing team."
+          description="Co-Founder & Chief Operations Officer at FAD, an exclusive jacket brand and structured thrift marketplace, architecting operations, supply chains, and growth strategy to scale a data-driven sustainable fashion startup."
           images={[
             fadlogo,
             fad1
@@ -24,29 +26,24 @@ function Experience() {
           title="ISA"
           description="Software Engineer Intern at ISA, focused on backend services and scalable APIs."
           images={[
+            isa1,
             'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80',
             'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80',
           ]}
           imagePosition="right"
+          readMoreLink="/experience/isa"
         />
         <ExperienceBlock
           title="Bootcamp"
           description="Completed a full-stack web development bootcamp, learning modern frameworks and best practices."
           images={[
-            'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80',
+            bootcamp1,
             'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80',
           ]}
           imagePosition="left"
+          readMoreLink="/experience/bootcamp"
         />
-        <ExperienceBlock
-          title="Internship"
-          description="Interned at TechNova, contributing to frontend features and UI improvements for a SaaS dashboard."
-          images={[
-            'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80',
-            'https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80',
-          ]}
-          imagePosition="right"
-        />
+
       </div>
       <style>{`
         .retro-exp-section {
